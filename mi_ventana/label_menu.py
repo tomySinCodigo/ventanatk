@@ -70,7 +70,7 @@ class Ventana(tk.Tk):
         self.columnconfigure(0, weight=1)
         self.rowconfigure(0, weight=1)
         
-        wg = LabelMenu(self)
+        wg = LabelMenu(self, icono="mi_ventana/icos10/T.png")
         wg.grid(row=0, column=0, sticky="wens")
         
 
