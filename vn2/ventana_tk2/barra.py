@@ -227,6 +227,15 @@ class Barra(tk.Frame):
         y = self.parent.winfo_y() + (e.y - self.M1_Y)
         self.parent.geometry(f"+{x}+{y}")
 
+    def setBg(self, color:str):
+        self.config(bg=color)
+        self.fm_bts.config(bg=color)
+        self.fm_bts.bt_top.setBg(color)
+        self.fm_bts.bt_izq.setBg(color)
+        self.fm_bts.bt_min.setBg(color)
+        self.fm_bts.bt_fw.setBg(color)
+        self.fm_bts.bt_x.setBg(color)
+        self.text_titulo.config(bg=color)
 
 
 

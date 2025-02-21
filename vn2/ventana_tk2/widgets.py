@@ -68,6 +68,11 @@ class MiBoton(tk.Button):
         self.icono.hover(**ico)
 
     def _cnf(self):
+        self.recargaConfig()
+        self.bind('<Enter>', self.on_enter)
+        self.bind('<Leave>', self.on_leave)
+
+    def recargaConfig(self):
         d = {
             'relief':'flat',
             'fg':self.fg,
@@ -78,13 +83,15 @@ class MiBoton(tk.Button):
             # 'highlightcolor':self.fgh,
             # 'highlightbackground':self.bgh
         }
-        
         self.config(**d)
-        self.bind('<Enter>', self.on_enter)
-        self.bind('<Leave>', self.on_leave)
 
     def ico(self, nom:str):
         self.icono.ico(nom)
+
+    def setBg(self, color:str):
+        self.config(bg=color)
+        self.bg = color
+        self.recargaConfig()
 
 class MiLabelMenu(tk.Label):
     def __init__(self, parent=None, *args, **kw):
