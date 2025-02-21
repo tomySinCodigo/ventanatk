@@ -153,9 +153,9 @@ class Barra(tk.Frame):
         self.fm_bts.bt_izq.config(command=self.alternaLado)
         self.fm_bts.bt_top.config(command=self.ontop)
 
-        self.parent.bind("<ButtonPress-1>", self.startMove)
+        self.parent.bind("<ButtonPress-3>", self.startMove)
         self.parent.bind("<ButtonRelease-1>", self.stopMove)
-        self.parent.bind("<B1-Motion>", self.onMotion)
+        self.parent.bind("<B3-Motion>", self.onMotion)
         self.M1_X = 0
         self.M1_Y = 0
 

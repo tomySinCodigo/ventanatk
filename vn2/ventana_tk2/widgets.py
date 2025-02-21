@@ -134,6 +134,25 @@ class MiLabelMenu(tk.Label):
         self.menu.tk_popup(wx, wy+lbh)
 
 
+class MiGrip(tk.Frame):
+    def __init__(self, parent, bg="lightblue", cursor="bottom_right_corner", w=10, h=15):
+        super().__init__(master=parent, bg=bg, cursor=cursor, width=w, height=h)
+        self.parent = parent
+
+    # Función para redimensionar la ventana
+    def start_resize(self, event):
+        self.start_x = event.x_root
+        self.start_y = event.y_root
+        self.start_width = self.parent.winfo_width()
+        self.start_height = self.parent.winfo_height()
+
+    def perform_resize(self, event):
+        delta_x = event.x_root - self.start_x
+        delta_y = event.y_root - self.start_y
+        new_width = max(self.start_width + delta_x, 100)  # Ancho mínimo
+        new_height = max(self.start_height + delta_y, 100)  # Alto mínimo
+        self.parent.geometry(f"{new_width}x{new_height}")
+
 
 
 if __name__ == '__main__':
