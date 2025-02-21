@@ -1,6 +1,6 @@
 import tkinter as tk
-from to import MiBoton, MiLabelMenu
-from to.posicion_ventana import PosicionVentana
+from ventana_tk2.widgets import MiBoton, MiLabelMenu
+from ventana_tk2.posicion_ventana import PosicionVentana
 
 
 class Iconos:

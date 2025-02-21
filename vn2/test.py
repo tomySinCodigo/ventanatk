@@ -1,5 +1,5 @@
 import tkinter as tk
-from to.barra import FrameBotones, Barra
+from ventana_tk2.barra import FrameBotones, Barra
 
 
 if __name__ == '__main__':
